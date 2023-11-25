@@ -11,6 +11,6 @@ const connectDB =(url)=>{
         useUnifiedTopology:true,
     })
 }
-
+//MONGO_URI=mongodb+srv://rajathsinha:123456R@cluster0.3se5dau.mongodb.net/TaskManagers?retryWrites=true&w=majority
 
 module.exports= connectDB;
