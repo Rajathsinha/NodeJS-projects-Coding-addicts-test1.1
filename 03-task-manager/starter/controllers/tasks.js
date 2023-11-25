@@ -9,7 +9,7 @@ const createTask=async(req,res)=>{
     res.status(201).json({task})
 }
 //test
-
+//damn it works
 const getTask=(req,res)=>{
     res.json({id:req.params.id})
 }
