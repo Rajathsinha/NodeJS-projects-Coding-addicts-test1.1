@@ -42,9 +42,7 @@ const getTask = async (req, res) => {
     }
 };
 
-const updateTask = (req, res) => {
-    res.send('update task')
-}
+
 const deleteTask = async(req, res) => {
 
     try{
@@ -62,7 +60,23 @@ const deleteTask = async(req, res) => {
 
     
 }
+//2:13:31
+const updateTask = async(req, res) => {
+    try{
+        const {id:taskdi} = req.params
+        const task = await Task.findOneAndUpdate({_id:taskdi},req.body)
+        if(!task)
+        {
+            return res.status(404).json({msg:`No task with id: ${taskdi}`})
+        }
+        res.status(200).json({task})
+      }
+      catch(errr)
+      {
+        res.status(500).json({msg: errr})
+      }
 
+}
 module.exports = {
     getAllTasks,
     createTask,
