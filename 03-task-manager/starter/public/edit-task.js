@@ -51,7 +51,7 @@ editFormDOM.addEventListener('submit', async (e) => {
       taskCompletedDOM.checked = true
     }
     formAlertDOM.style.display = 'block'
-    formAlertDOM.textContent = `success, edited task`
+    formAlertDOM.textContent = `Success, edited task successfully!`
     formAlertDOM.classList.add('text-success')
   } catch (error) {
     console.error(error)

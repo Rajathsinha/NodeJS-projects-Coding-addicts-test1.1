@@ -9,14 +9,17 @@ require('./db/connection')
 require('dotenv').config()
 
 //middleware
-
+app.use(express.static('./public'))
 app.use(express.json())
 
 //ROUTES
 
-app.get('/hello',(req,res)=>{
-    res.send('Task manager app')
-})
+// app.get('/hello',(req,res)=>{
+//     res.send('Task manager app')
+// })
+
+
+
 
 app.use('/api/v1/tasks',tasks)
 const port= 3002;
