@@ -3,8 +3,18 @@ const Task = require('../models/Task')
 // const { createCustomError } = require('../errors/custom-error')
 
 const getAllTasks = async (req, res) => {
-  const tasks = await Task.find({})
-  res.status(200).json({ tasks })
+  try{
+    const tasks = await Task.find({})
+    //res.status(200).json({ tasks })
+    res
+       .status(200)
+       .json({status:'success',data:{tasks,nbHits: tasks.length}})
+  }
+  catch(err)
+  {
+  res.status(500).json({ msg:error })
+
+  }
 }
 
 const createTask = async (req, res) => {
